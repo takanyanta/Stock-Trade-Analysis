@@ -52,6 +52,46 @@ class Load_data:
 * Define the point as Golden Cross when <img src="https://latex.codecogs.com/gif.latex?p_S(t-1)&space;<&space;p_L(t-1)"> and <img src="https://latex.codecogs.com/gif.latex?p_S(t)&space;>&space;p_L(t)"> hold.
 * Define the point as Dead Cross when <img src="https://latex.codecogs.com/gif.latex?p_S(t-1)&space;>&space;p_L(t-1)"> and <img src="https://latex.codecogs.com/gif.latex?p_S(t)&space;<&space;p_L(t)"> hold.
 
+```python
+class Golden_Dead_Cross:
+    def __init__(self, df):
+        self.df = df
+    def return_df(self, short, long):
+        self.short = short
+        self.long = long
+        
+        self.df["change%"] = self.df["Adj Close"].pct_change()
+        self.df["Cross"] = 0
+        self.df["Hold"] = 1
+        self.df["Assets"] = 1.0
+        self.k = 0
+        for self.i in range(1, len(self.df)):
+            #long>short:GOLDEN, long<short:Dead
+            if self.df["MA_{}".format(self.short)].iat[self.i-1] < self.df["MA_{}".format(self.long)].iat[self.i-1] and \
+               self.df["MA_{}".format(self.short)].iat[self.i] > self.df["MA_{}".format(self.long)].iat[self.i]:
+                self.df["Cross"].iat[self.i] = 1#Buy at GoldenCross
+                
+            elif self.df["MA_{}".format(self.short)].iat[self.i-1] > self.df["MA_{}".format(self.long)].iat[self.i-1] and \
+                 self.df["MA_{}".format(self.short)].iat[self.i] < self.df["MA_{}".format(self.long)].iat[self.i]:
+                self.df["Cross"].iat[self.i] = -1#Sell at GoldenCross
+                self.k += 1
+
+            if self.k > 0:# num of buy > 0
+                if self.df["Cross"].iat[self.i] == 1:
+                    self.df["Hold"].iat[self.i] = 1
+                elif self.df["Cross"].iat[self.i] == -1:
+                    self.df["Hold"].iat[self.i] = 0
+                else:
+                    self.df["Hold"].iat[self.i] = self.df["Hold"].iat[self.i-1]
+    
+            if self.df["Hold"].iat[self.i] == 0:
+                self.df["Assets"].iat[self.i] = self.df["Assets"].iat[self.i-1]
+            else:
+                self.df["Assets"].iat[self.i] = self.df["Assets"].iat[self.i-1]*(1+self.df["change%"].iat[self.i])
+        return self.df
+```
+
+
 ### 3. Compute the estimated profits of both *BHS* and *BGSDS*
 
 ### 4. Summurize the omparison result
