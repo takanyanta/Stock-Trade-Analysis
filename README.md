@@ -152,3 +152,4 @@ class Analytics:
 ![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/percentage.png "process1")
 
 ## Conclusion
+* Basically, BGSDS losed to BHS.
