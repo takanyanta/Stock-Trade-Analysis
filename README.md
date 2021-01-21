@@ -91,9 +91,39 @@ class Golden_Dead_Cross:
         return self.df
 ```
 
+### 3. Compute the estimated profits of both *BHS* and *BGSDS*
+
+* From the beginning, we starts "Hold", and "Sell" when we encounter the dead cross.
+* After that, we "Buy" at the Golden Cross and "Sell" at the Dead Cross repeatedly.
+
+```python
+class Analytics:
+    def __init__(self, df, ticker, short, long):
+        self.df = df
+        self.ticker = ticker
+        self.short = short
+        self.long = long
+    def compute_rise_fall_rate(self):
+        self.res_ = []
+        for self.i in range(2000, 2021, 1):
+            self.start = datetime(self.i, 1, 1)
+            self.end = datetime(self.i, 12, 31)
+            self.select_ = (self.df.index >= self.start) & (self.df.index <= self.end)
+            if np.sum(self.select_) > 0:
+                self.original_rise_fall_rate = self.df[self.select_]["Adj Close"].iat[-1]/self.df[self.select_]["Adj Close"].iat[0]
+                self.assets_rise_fall_rate = self.df[self.select_]["Assets"].iat[-1]/self.df[self.select_]["Assets"].iat[0]
+                self.hold_day = (self.df[self.select_]["Hold"] == 1).sum()
+                self.original_total_rase_fall_rate = self.df["Adj Close"][-1]/self.df["Adj Close"][0]
+                self.assets_total_rase_fall_rate = self.df["Assets"][-1]/self.df["Assets"][0]
+                self.res_.append([self.ticker, self.short, self.long, self.i, self.original_rise_fall_rate, 
+                                  self.assets_rise_fall_rate, self.hold_day, 
+                                  self.original_total_rase_fall_rate, self.assets_total_rase_fall_rate])
+        return self.res_
+```
+
 * Sample picture(6301, *Komatsu*)
 ![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/komatsu.png "process1")
-### 3. Compute the estimated profits of both *BHS* and *BGSDS*
+
 
 ### 4. Summurize the omparison result
 
