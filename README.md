@@ -90,7 +90,7 @@ class Golden_Dead_Cross:
                 self.df["Assets"].iat[self.i] = self.df["Assets"].iat[self.i-1]*(1+self.df["change%"].iat[self.i])
         return self.df
 ```
-
+<img src="https://github.com/takanyanta/Technical-Stock-Trade-Analysis/edit/main/komatsu.png">
 
 ### 3. Compute the estimated profits of both *BHS* and *BGSDS*
 
