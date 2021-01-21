@@ -125,7 +125,7 @@ class Analytics:
 ![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/komatsu.png "process1")
 
 
-### 4. Summurize the omparison result
+### 4. Summurize the comparison result
 
 #### 1. Looking for most efficient combination of short-MA window size and long-MA window size
 
