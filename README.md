@@ -127,5 +127,9 @@ class Analytics:
 
 ### 4. Summurize the omparison result
 
+#### 1. Looking for most efficient combination of short-MA window size and long-MA window size
+
+#### 2. Compare BHS and BGSDS
+
 ## Conclusion
 * 
