@@ -136,4 +136,9 @@ class Analytics:
 #### 2. Compare BHS and BGSDS
 
 ## Conclusion
-* 
+* The profits of BHS
+
+![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/BHS.png "process1")
+
+* The profits of BGSDS
+![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/BGSDS.png "process1")
