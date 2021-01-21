@@ -153,3 +153,4 @@ class Analytics:
 
 ## Conclusion
 * Basically, BGSDS losed to BHS.
+* BGSDS does't lose much, but also doesn't win much.
