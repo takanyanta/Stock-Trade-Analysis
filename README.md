@@ -135,10 +135,20 @@ class Analytics:
 
 #### 2. Compare BHS and BGSDS
 
-## Conclusion
 * The profits of BHS
 
 ![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/BHS.png "process1")
 
 * The profits of BGSDS
+
 ![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/BGSDS.png "process1")
+
+* Parity plot
+
+![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/Parity.png "process1")
+
+* Percentage that BHS win BGSDS(Totaly 57.7%)
+
+![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/percentage.png "process1")
+
+## Conclusion
