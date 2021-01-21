@@ -130,6 +130,8 @@ class Analytics:
 #### 1. Looking for most efficient combination of short-MA window size and long-MA window size
 
 * By brute force method, find best combination of short-MA window size:{25, 30, 35, 40, 45, 50} and long-MA window size:{75, 100, 125, 150, 175, 200}.
+* Combination of [25, 125], [30, 125], [35, 75], [40, 75] has better efficiency.(in the following, use [35, 75])
+![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/parameter.png "process1")
 
 #### 2. Compare BHS and BGSDS
 
