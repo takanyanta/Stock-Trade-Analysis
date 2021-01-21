@@ -92,7 +92,7 @@ class Golden_Dead_Cross:
 ```
 
 * Sample picture(6301, *Komatsu*)
-![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/edit/main/komatsu.png "process1")
+![Extract the frame](https://github.com/takanyanta/Technical-Stock-Trade-Analysis/blob/main/komatsu.png "process1")
 ### 3. Compute the estimated profits of both *BHS* and *BGSDS*
 
 ### 4. Summurize the omparison result
