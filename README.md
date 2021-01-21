@@ -49,8 +49,8 @@ class Load_data:
 ### 2. Define the point of both  Golden and Dead Cross.
 
 * Define <img src="https://latex.codecogs.com/gif.latex?p_S(t)"> as short-term-MA-price at *t*(time) and <img src="https://latex.codecogs.com/gif.latex?p_L(t)"> as long-term-MA-price  at *t*.
-* Define the point as Golden Cross when <img src="p_S(t-1) < p_L(t-1)"> and <img src="p_S(t) > p_L(t)"> hold.
-* Define the point as Dead Cross when <img src="p_S(t-1) > p_L(t-1)"> and <img src="p_S(t) < p_L(t)"> hold.
+* Define the point as Golden Cross when <img src="https://latex.codecogs.com/gif.latex?p_S(t-1)&space;<&space;p_L(t-1)"> and <img src="https://latex.codecogs.com/gif.latex?p_S(t)&space;>&space;p_L(t)"> hold.
+* Define the point as Dead Cross when <img src="https://latex.codecogs.com/gif.latex?p_S(t-1)&space;>&space;p_L(t-1)"> and <img src="https://latex.codecogs.com/gif.latex?p_S(t)&space;<&space;p_L(t)"> hold.
 
 ### 3. Compute the estimated profits of both *BHS* and *BGSDS*
 
